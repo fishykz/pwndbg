@@ -146,10 +146,10 @@ if ! ${PYTHON} -m pip -V; then
 fi
 
 # Upgrade pip itself
-${PYTHON} -m pip install ${INSTALLFLAGS} --upgrade pip
+${PYTHON} -m pip install -i https://mirrors.aliyun.com/pypi/simple/ ${INSTALLFLAGS} --upgrade pip --no-cache-dir
 
 # Install Python dependencies
-${PYTHON} -m pip install ${INSTALLFLAGS} -Ur requirements.txt
+${PYTHON} -m pip install -i https://mirrors.aliyun.com/pypi/simple/ ${INSTALLFLAGS} -Ur requirements.txt --no-cache-dir
 
 # Load Pwndbg into GDB on every launch.
 if ! grep pwndbg ~/.gdbinit &>/dev/null; then
